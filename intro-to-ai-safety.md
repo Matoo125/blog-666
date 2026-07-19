@@ -36,7 +36,9 @@ If we specify an imperfect objective, the system may optimize for it in bizarre 
 > **Classic Example (The King Midas Problem):** King Midas wished that everything he touched would turn to gold. He got exactly what he specified, which quickly resulted in starvation and tragedy.
 
 Mathematically, if we define our true preferences as $V(s)$ (value of state $s$) and our proxy reward function as $R(s)$, we want to maximize the expected value:
+<div class="math-display">
 $$\max_{\pi} \mathbb{E}_{s \sim \pi} [V(s)] \quad \text{subject to optimizing} \quad \max_{\pi} \mathbb{E}_{s \sim \pi} [R(s)]$$
+</div>
 Outer alignment fails when a policy $\pi$ achieves a high score on $R(s)$ while yielding a very low score on $V(s)$.
 
 ### 2. Inner Alignment
