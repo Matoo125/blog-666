@@ -1,0 +1,101 @@
+---
+layout: layouts/base.njk
+title: "Matej Vrzala - Personal Website & Blog"
+description: "Thank you for visiting my corner of the web. I'm a software developer, aspiring effective altruist, and entrepreneur. My interests are rooted in sciences, education, and utilitarian ethics."
+---
+
+<style>
+  .typing-cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: var(--text-primary);
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+</style>
+
+<div class="hero">
+  <h1><span id="typewriter"></span><span class="typing-cursor">&nbsp;</span></h1>
+  <p>Software Engineer & Systems Builder. Exploring artificial intelligence alignment, evaluation dynamics, and systems programming.</p>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const words = ["Hello", "Ahoj", "Hallo", "Szia", "Cześć", "Привіт", "Hola", "Bonjour"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typewriterElement = document.getElementById("typewriter");
+    
+    function typeEffect() {
+      const currentWord = words[wordIndex];
+      
+      if (isDeleting) {
+        typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+      }
+      
+      let typeSpeed = isDeleting ? 50 : 100;
+      
+      if (!isDeleting && charIndex === currentWord.length) {
+        typeSpeed = 2000; // Pause at end of word
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        typeSpeed = 500; // Pause before typing next word
+      }
+      
+      setTimeout(typeEffect, typeSpeed);
+    }
+    
+    // Start typing effect
+    setTimeout(typeEffect, 500);
+  });
+</script>
+
+<section id="about" style="margin-bottom: 3rem; font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6; max-width: 650px;">
+  <p>Thank you for visiting my corner of the web. I'm a software developer, aspiring effective altruist, and entrepreneur. My interests are rooted in sciences, education, and utilitarian ethics. I believe in animal sentience, as well as human flourishing. Get in touch! :)</p>
+</section>
+
+<h2 id="writings" style="font-family: var(--font-title); font-size: 1.6rem; font-weight: 700; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 3rem; margin-bottom: 1.5rem;">Recent Writings</h2>
+
+<div class="posts-grid">
+  {% for post in collections.posts | reverse %}
+    <div class="post-card" onclick="window.location.href='{{ post.url }}'">
+      <div class="post-card-content">
+        <div class="post-meta">
+          <span class="post-tags-list">
+            {% for tag in post.data.tags %}
+              {% if tag != "posts" %}
+                #{{ tag }}
+              {% endif %}
+            {% endfor %}
+          </span>
+          <span class="post-date">{{ post.date | postDate }}</span>
+        </div>
+        <h2>{{ post.data.title }}</h2>
+        <p>{{ post.data.description }}</p>
+        <span class="read-more">
+          Read Post 
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </span>
+      </div>
+    </div>
+  {% else %}
+    <div style="text-align: center; color: var(--text-secondary); margin-top: 3rem;">
+      <p>No posts published yet. Check back soon!</p>
+    </div>
+  {% endfor %}
+</div>

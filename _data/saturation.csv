@@ -1,0 +1,9 @@
+Year,Model,MMLUScore,HumanEvalScore
+2020,GPT-3 (few-shot),43.9,0.0
+2021,Gopher,60.0,0.0
+2022,Chinchilla,67.6,10.0
+2022,GPT-3.5 (davinci-002),70.0,48.1
+2023,GPT-4,86.4,67.0
+2023,Claude 2,78.5,71.2
+2024,Claude 3 Opus,86.8,84.9
+2024,GPT-4o,88.7,90.2
