@@ -551,6 +551,22 @@ pre[class*="language-"] {
   transform: translateX(-2px);
 }
 
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  padding: 0.4rem;
+  margin-left: 0.5rem;
+  border-radius: 6px;
+  transition: var(--transition-smooth);
+}
+
+.menu-toggle:hover {
+  background-color: var(--bg-secondary);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .hero h1 {
@@ -563,5 +579,33 @@ pre[class*="language-"] {
   
   .post-card {
     padding: 1.25rem;
+  }
+  
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-links-wrapper nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-links-wrapper nav.nav-open {
+    display: block;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
   }
 }
