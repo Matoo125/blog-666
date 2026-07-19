@@ -11,6 +11,7 @@ export default function(eleventyConfig) {
   });
   // Copy assets to output folder
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("cv.pdf");
 
   // Add syntax highlighting
   eleventyConfig.addPlugin(syntaxHighlight);
