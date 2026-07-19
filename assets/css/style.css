@@ -84,9 +84,25 @@ body {
 }
 
 a {
-  color: var(--text-primary);
+	text-decoration: none;
+        color: var(--text-primary);
+        transition: var(--transition-smooth);
+}
+
+a.highlighted {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-primary);
+  text-decoration-thickness: 3px;
+}
+
+a.highlighted:hover {
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--accent-hover);
+  color: var(--accent-hover);
+}
+
+a.decorless {
   text-decoration: none;
-  transition: var(--transition-smooth);
 }
 
 /* Scrollbar styling */
