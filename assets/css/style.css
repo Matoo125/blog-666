@@ -242,6 +242,23 @@ footer.site-footer a:hover {
 .hero {
   padding: 1rem 0 1.5rem 0;
   text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-image {
+  flex-shrink: 0;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .hero h1 {
@@ -661,6 +678,17 @@ pre[class*="language-"] {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .hero-image {
+    width: 180px;
+    height: 180px;
+  }
+
   .hero h1 {
     font-size: 2.25rem;
   }
