@@ -1,7 +1,70 @@
 [
   {
+    "slug": "frontiermath",
+    "title": "AI Math Benchmark & Agentic Tool",
+    "category": "software",
+    "featured": true,
+    "description": "Developed a leading AI math benchmark.",
+    "details": [
+      "Developed a leading AI math benchmark and agentic tool while working at Epoch AI."
+    ],
+    "stack": [
+      "Python"
+    ],
+    "year": "2025",
+    "links": [
+      {
+        "label": "View FrontierMath",
+        "url": "https://epoch.ai/frontiermath"
+      },
+      {
+        "label": "Read the paper",
+        "url": "https://arxiv.org/abs/2411.04872"
+      }
+    ]
+  },
+  {
+    "slug": "educore",
+    "title": "Educore (3D Game Engine)",
+    "category": "software",
+    "featured": true,
+    "description": "High-level editor for developing educational 3D games.",
+    "details": [
+      "Educore is a high-level editor for developing educational 3D games. It is built in C++ on top of sokol."
+    ],
+    "stack": [
+      "C++",
+      "sokol"
+    ]
+  },
+  {
+    "slug": "redactor",
+    "title": "Redactor (Lightweight IDE)",
+    "category": "software",
+    "featured": true,
+    "description": "Lightweight, extensible C++ text editor with language server support, a built-in terminal, and Git and pull request tools.",
+    "details": [
+      "Redactor is a lightweight, extensible text editor written in C++20 with SDL3. It has a custom immediate-mode UI, embedded Umka and Lua scripting, and a built-in terminal.",
+      "Features include multiple cursors, split panes, Vim mode, tree-sitter highlighting, language server support, a Git sidebar, and an agent panel for coding agents."
+    ],
+    "stack": [
+      "C++20",
+      "SDL3",
+      "Lua",
+      "Umka"
+    ],
+    "image": "/assets/projects/redactor.png",
+    "links": []
+  },
+  {
+    "slug": "spec-driven-development",
     "title": "Spec-Driven Development Prototype",
+    "category": "software",
+    "featured": false,
     "description": "Prototype for spec-driven development, built as part of the ARIA Safeguarded AI program.",
+    "details": [
+      "A prototype for spec-driven development, built during a short-term contract at Hash AI as part of the ARIA Safeguarded AI program."
+    ],
     "stack": [
       "React",
       "Express",
@@ -10,30 +73,42 @@
       "OpenCode SDK"
     ],
     "year": "2026",
-    "url": "https://brunch.ai/",
-    "linkLabel": "Visit brunch.ai"
+    "links": [
+      {
+        "label": "Visit brunch.ai",
+        "url": "https://brunch.ai/"
+      }
+    ]
   },
   {
-    "title": "AI Math Benchmark & Agentic Tool",
-    "description": "Developed a leading AI math benchmark and agentic tool.",
-    "stack": [
-      "Python"
-    ],
-    "year": "2025",
-    "url": "https://epoch.ai/frontiermath",
-    "linkLabel": "View FrontierMath"
-  },
-  {
+    "slug": "gate",
     "title": "GATE: AI Automation Model",
+    "category": "software",
+    "featured": false,
     "description": "Integrated assessment model simulating how AI automation affects growth, investment, and innovation, with an interactive sandbox.",
+    "details": [
+      "GATE is an integrated assessment model for AI automation. It combines a compute-based model of AI development, an automation framework, and a semi-endogenous growth model.",
+      "An interactive sandbox lets you test different scenarios and policies."
+    ],
     "stack": [],
     "year": "2025",
-    "url": "https://arxiv.org/abs/2503.04941",
-    "linkLabel": "Read the paper"
+    "links": [
+      {
+        "label": "Read the paper",
+        "url": "https://arxiv.org/abs/2503.04941"
+      }
+    ]
   },
   {
+    "slug": "data-visualization-framework",
     "title": "Data Visualization Framework",
+    "category": "software",
+    "featured": false,
     "description": "Reusable data visualization framework built on top of D3, plus a Web Components UI system that standardizes website design.",
+    "details": [
+      "A reusable data visualization framework built on top of D3, plus a Web Components UI system that standardizes website design.",
+      "Built while working at Epoch AI with researchers to turn complex data into usable interfaces."
+    ],
     "stack": [
       "D3",
       "Web Components"
@@ -41,77 +116,154 @@
     "year": "2025"
   },
   {
-    "title": "Educore (3D Game Engine)",
-    "description": "High-level editor for developing educational 3D games.",
-    "stack": [
-      "C++",
-      "sokol"
-    ]
-  },
-  {
-    "title": "Redactor (Lightweight IDE)",
-    "description": "Lightweight, extensible C++ text editor with language server support, a built-in terminal, and Git and pull request tools.",
-    "stack": [
-      "C++",
-      "SDL3",
-      "Lua",
-      "Umka"
-    ]
-  },
-  {
+    "slug": "lang-app",
     "title": "Language Learning App",
+    "category": "software",
+    "featured": false,
     "description": "Web app for learning languages, starting with German.",
-    "stack": [],
-    "url": "https://lang.altfresh.sk/",
-    "linkLabel": "Open the app"
+    "details": [
+      "German vocabulary flashcards with spaced-repetition scoring, plus chat, writing feedback, and a reader that uses the bookmarks API.",
+      "Built with Preact and Vite. Pronunciation audio is generated and stored by the backend API."
+    ],
+    "stack": [
+      "Preact",
+      "Vite",
+      "JavaScript"
+    ],
+    "links": [
+      {
+        "label": "Open the app",
+        "url": "https://lang.altfresh.sk/"
+      }
+    ]
   },
   {
+    "slug": "hireme",
     "title": "Hireme.sk Job Board",
+    "category": "software",
+    "featured": false,
     "description": "Job board that collects high-impact job listings from partner boards such as 80,000 Hours, Probably Good, CEA, and Effective Animal Advocacy, filtered for Slovakia and worldwide roles.",
-    "stack": [],
-    "url": "https://hireme.sk/",
-    "linkLabel": "Browse jobs"
+    "details": [
+      "Hireme.sk collects high-impact job listings from partner job boards and highlights roles relevant to job seekers in Slovakia or elsewhere in the world."
+    ],
+    "stack": [
+      "Python"
+    ],
+    "links": [
+      {
+        "label": "Browse jobs",
+        "url": "https://hireme.sk/"
+      }
+    ]
   },
   {
+    "slug": "altfresh",
     "title": "Altfresh Bookmarking App",
+    "category": "software",
+    "featured": false,
     "description": "Reading app that saves web links, uploaded files, and pasted text, with customizable display, text-to-speech, highlights, and notes.",
-    "stack": [],
-    "url": "https://altfresh.sk/",
-    "linkLabel": "Open Altfresh"
+    "details": [
+      "Altfresh saves web links, uploaded files, and pasted text so you can read them with customizable display settings.",
+      "You can listen to content aloud and add highlights and notes."
+    ],
+    "stack": [
+      "TypeScript"
+    ],
+    "links": [
+      {
+        "label": "Open Altfresh",
+        "url": "https://altfresh.sk/"
+      }
+    ]
   },
   {
+    "slug": "happy-buddha",
     "title": "Happy Buddha Meditation App",
+    "category": "software",
+    "featured": false,
     "description": "Meditation app with a session timer and a wellness tracking tool.",
-    "stack": [],
-    "url": "https://sit.altfresh.sk/",
-    "linkLabel": "Open the app"
+    "details": [
+      "A meditation app with a timer for sessions and a tool for tracking wellness."
+    ],
+    "stack": [
+      "TypeScript"
+    ],
+    "links": [
+      {
+        "label": "Open the app",
+        "url": "https://sit.altfresh.sk/"
+      }
+    ]
   },
   {
+    "slug": "budgetscan",
     "title": "BudgetScan Security Scanner",
+    "category": "software",
+    "featured": false,
     "description": "AI-based security scanner for pull and merge requests that sets scan depth within a cost cap and deadline. Comment-triggered service is in early access.",
+    "details": [
+      "An AI-based security scanner for pull and merge requests.",
+      "It plans how deep to scan within a set cost cap and deadline. The comment-triggered service is in early access and not yet purchasable."
+    ],
     "stack": [],
-    "url": "http://ggsa.tech",
-    "linkLabel": "Visit BudgetScan"
+    "links": [
+      {
+        "label": "Visit BudgetScan",
+        "url": "https://ggsa.tech"
+      }
+    ]
   },
   {
+    "slug": "effective-altruism-slovakia",
     "title": "Effective Altruism Slovakia",
+    "category": "community",
+    "featured": false,
     "description": "Community for people looking for the most effective ways to help humans and animals, focused on the world's most urgent problems.",
+    "details": [
+      "An international effective altruism community, in its Slovak form, for people looking for the most effective ways to help humans and animals."
+    ],
     "stack": [],
-    "url": "https://www.efektivnyaltruizmus.sk/",
-    "linkLabel": "Visit the community"
+    "links": [
+      {
+        "label": "Visit the community",
+        "url": "https://www.efektivnyaltruizmus.sk/"
+      }
+    ]
   },
   {
+    "slug": "pauseai-slovensko",
     "title": "PauseAI Slovensko",
+    "category": "community",
+    "featured": false,
     "description": "Slovak civic initiative, part of the global PauseAI movement, calling for safer, democratically supervised AI development.",
+    "details": [
+      "The Slovak civic initiative of the global PauseAI movement, founded in 2023.",
+      "It calls for safer, democratically supervised AI development, including an international oversight body and a pause on training the most powerful models until their safety is proven."
+    ],
     "stack": [],
-    "url": "http://pauseai.sk",
-    "linkLabel": "Visit PauseAI Slovensko"
+    "links": [
+      {
+        "label": "Visit PauseAI Slovensko",
+        "url": "https://pauseai.sk"
+      }
+    ]
   },
   {
+    "slug": "projekt-empatia",
     "title": "Projekt Empatia",
+    "category": "community",
+    "featured": false,
     "description": "Organization that gives lectures and workshops about factory farming and promotes individual changes to dietary habits.",
+    "details": [
+      "Projekt Empatia gives lectures and workshops about factory farming and promotes individual changes to dietary habits.",
+      "Its tagline: \"Bez empatie niet zmeny\" (without empathy, no change)."
+    ],
     "stack": [],
-    "url": "https://www.projektempatia.sk",
-    "linkLabel": "Visit Projekt Empatia"
+    "links": [
+      {
+        "label": "Visit Projekt Empatia",
+        "url": "https://www.projektempatia.sk"
+      }
+    ]
   }
 ]

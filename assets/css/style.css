@@ -828,3 +828,48 @@ pre[class*="language-"] {
 .links-container hr {
   display: none;
 }
+
+/* Projects */
+.projects-heading {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+}
+
+.project-image-large {
+  margin-top: 1.5rem;
+}
+
+.project-detail h1 {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-detail p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}

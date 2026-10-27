@@ -69,6 +69,18 @@ description: "Thank you for visiting my corner of the web. I'm a software develo
   <p>Thank you for visiting my corner of the web. My interests are rooted in modern sciences, and effective altruism. I believe in animal sentience, as well as human flourishing. <a href="mailto:matej@hireme.sk" class='highlighted'>Get in touch!</a> :)</p>
 </section>
 
+<h2 id="projects" style="font-family: var(--font-title); font-size: 1.6rem; font-weight: 700; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 3rem; margin-bottom: 1.5rem;">Featured Projects</h2>
+
+<div class="posts-grid">
+  {% for project in projects %}
+    {% if project.featured %}
+      {% include "partials/project-card.njk" %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+<p style="margin-top: 1.5rem;"><a href="/projects/" class="read-more">See all projects &rarr;</a></p>
+
 <h2 id="writings" style="font-family: var(--font-title); font-size: 1.6rem; font-weight: 700; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 3rem; margin-bottom: 1.5rem;">Recent Writings</h2>
 
 <div class="posts-grid">

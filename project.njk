@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: projects
+  size: 1
+  alias: project
+permalink: "/projects/{{ project.slug }}/"
+title: "{{ project.title }} - Matej Vrzala"
+description: "{{ project.description }}"
+---
+
+<article class="project-detail">
+  <a href="/projects/" class="back-link">&larr; All projects</a>
+
+  {% if project.image %}
+    <img src="{{ project.image }}" alt="Screenshot of {{ project.title }}" class="project-image project-image-large">
+  {% endif %}
+
+  <h1>{{ project.title }}</h1>
+
+  <div class="post-meta">
+    <span class="post-tags-list">
+      {% for item in project.stack %}
+        #{{ item }}
+      {% endfor %}
+    </span>
+    {% if project.year %}<span class="post-date">{{ project.year }}</span>{% endif %}
+  </div>
+
+  {% for paragraph in project.details %}
+    <p>{{ paragraph }}</p>
+  {% endfor %}
+
+  {% if project.links.length %}
+    <div class="project-links">
+      {% for link in project.links %}
+        <a href="{{ link.url }}" class="read-more" target="_blank" rel="noopener">{{ link.label }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</article>
