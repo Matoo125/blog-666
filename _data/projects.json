@@ -1,0 +1,117 @@
+[
+  {
+    "title": "Spec-Driven Development Prototype",
+    "description": "Prototype for spec-driven development, built as part of the ARIA Safeguarded AI program.",
+    "stack": [
+      "React",
+      "Express",
+      "DoltDB",
+      "Claude Agentic SDK",
+      "OpenCode SDK"
+    ],
+    "year": "2026",
+    "url": "https://brunch.ai/",
+    "linkLabel": "Visit brunch.ai"
+  },
+  {
+    "title": "AI Math Benchmark & Agentic Tool",
+    "description": "Developed a leading AI math benchmark and agentic tool.",
+    "stack": [
+      "Python"
+    ],
+    "year": "2025",
+    "url": "https://epoch.ai/frontiermath",
+    "linkLabel": "View FrontierMath"
+  },
+  {
+    "title": "GATE: AI Automation Model",
+    "description": "Integrated assessment model simulating how AI automation affects growth, investment, and innovation, with an interactive sandbox.",
+    "stack": [],
+    "year": "2025",
+    "url": "https://arxiv.org/abs/2503.04941",
+    "linkLabel": "Read the paper"
+  },
+  {
+    "title": "Data Visualization Framework",
+    "description": "Reusable data visualization framework built on top of D3, plus a Web Components UI system that standardizes website design.",
+    "stack": [
+      "D3",
+      "Web Components"
+    ],
+    "year": "2025"
+  },
+  {
+    "title": "Educore (3D Game Engine)",
+    "description": "High-level editor for developing educational 3D games.",
+    "stack": [
+      "C++",
+      "sokol"
+    ]
+  },
+  {
+    "title": "Redactor (Lightweight IDE)",
+    "description": "Lightweight, extensible C++ text editor with language server support, a built-in terminal, and Git and pull request tools.",
+    "stack": [
+      "C++",
+      "SDL3",
+      "Lua",
+      "Umka"
+    ]
+  },
+  {
+    "title": "Language Learning App",
+    "description": "Web app for learning languages, starting with German.",
+    "stack": [],
+    "url": "https://lang.altfresh.sk/",
+    "linkLabel": "Open the app"
+  },
+  {
+    "title": "Hireme.sk Job Board",
+    "description": "Job board that collects high-impact job listings from partner boards such as 80,000 Hours, Probably Good, CEA, and Effective Animal Advocacy, filtered for Slovakia and worldwide roles.",
+    "stack": [],
+    "url": "https://hireme.sk/",
+    "linkLabel": "Browse jobs"
+  },
+  {
+    "title": "Altfresh Bookmarking App",
+    "description": "Reading app that saves web links, uploaded files, and pasted text, with customizable display, text-to-speech, highlights, and notes.",
+    "stack": [],
+    "url": "https://altfresh.sk/",
+    "linkLabel": "Open Altfresh"
+  },
+  {
+    "title": "Happy Buddha Meditation App",
+    "description": "Meditation app with a session timer and a wellness tracking tool.",
+    "stack": [],
+    "url": "https://sit.altfresh.sk/",
+    "linkLabel": "Open the app"
+  },
+  {
+    "title": "BudgetScan Security Scanner",
+    "description": "AI-based security scanner for pull and merge requests that sets scan depth within a cost cap and deadline. Comment-triggered service is in early access.",
+    "stack": [],
+    "url": "http://ggsa.tech",
+    "linkLabel": "Visit BudgetScan"
+  },
+  {
+    "title": "Effective Altruism Slovakia",
+    "description": "Community for people looking for the most effective ways to help humans and animals, focused on the world's most urgent problems.",
+    "stack": [],
+    "url": "https://www.efektivnyaltruizmus.sk/",
+    "linkLabel": "Visit the community"
+  },
+  {
+    "title": "PauseAI Slovensko",
+    "description": "Slovak civic initiative, part of the global PauseAI movement, calling for safer, democratically supervised AI development.",
+    "stack": [],
+    "url": "http://pauseai.sk",
+    "linkLabel": "Visit PauseAI Slovensko"
+  },
+  {
+    "title": "Projekt Empatia",
+    "description": "Organization that gives lectures and workshops about factory farming and promotes individual changes to dietary habits.",
+    "stack": [],
+    "url": "https://www.projektempatia.sk",
+    "linkLabel": "Visit Projekt Empatia"
+  }
+]
