@@ -21,7 +21,8 @@
         "label": "Read the paper",
         "url": "https://arxiv.org/abs/2411.04872"
       }
-    ]
+    ],
+    "image": "/assets/projects/frontiermath.png"
   },
   {
     "slug": "educore",
@@ -78,7 +79,8 @@
         "label": "Visit brunch.ai",
         "url": "https://brunch.ai/"
       }
-    ]
+    ],
+    "image": "/assets/projects/spec-driven-development.png"
   },
   {
     "slug": "gate",
@@ -135,7 +137,8 @@
         "label": "Open the app",
         "url": "https://lang.altfresh.sk/"
       }
-    ]
+    ],
+    "image": "/assets/projects/lang-app.png"
   },
   {
     "slug": "hireme",
@@ -154,7 +157,8 @@
         "label": "Browse jobs",
         "url": "https://hireme.sk/"
       }
-    ]
+    ],
+    "image": "/assets/projects/hireme.png"
   },
   {
     "slug": "altfresh",
@@ -174,7 +178,8 @@
         "label": "Open Altfresh",
         "url": "https://altfresh.sk/"
       }
-    ]
+    ],
+    "image": "/assets/projects/altfresh.png"
   },
   {
     "slug": "happy-buddha",
@@ -193,7 +198,8 @@
         "label": "Open the app",
         "url": "https://sit.altfresh.sk/"
       }
-    ]
+    ],
+    "image": "/assets/projects/happy-buddha.png"
   },
   {
     "slug": "budgetscan",
@@ -211,7 +217,8 @@
         "label": "Visit BudgetScan",
         "url": "https://ggsa.tech"
       }
-    ]
+    ],
+    "image": "/assets/projects/budgetscan.png"
   },
   {
     "slug": "effective-altruism-slovakia",
