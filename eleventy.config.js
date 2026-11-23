@@ -26,6 +26,9 @@ export default function(eleventyConfig) {
     });
   });
 
+  // Changes on every build so browsers fetch the new stylesheet
+  eleventyConfig.addGlobalData("buildId", () => Date.now().toString(36));
+
   // Configure Markdown processing options
   eleventyConfig.setQuietMode(true);
 
