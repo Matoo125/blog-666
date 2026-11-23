@@ -1,5 +1,40 @@
 [
   {
+    "slug": "budgetscan",
+    "title": "BudgetScan Security Scanner",
+    "category": "software",
+    "featured": true,
+    "spotlight": true,
+    "tagline": "Set a price on the pull request. The scan fits the budget.",
+    "description": "AI-based security scanner for pull and merge requests that sets scan depth within a cost cap and deadline. Comment-triggered service is in early access.",
+    "highlights": [
+      "You set a cost cap and a deadline, and the scanner plans how deep to go within them.",
+      "A free pre-scan estimate tells you the cost before anything runs.",
+      "Built on the open-source nano-analyzer, with case studies on projects such as tmux, KDE Connect and Himalaya."
+    ],
+    "details": [
+      "An AI-based security scanner for pull and merge requests, built together with Martin Vlach.",
+      "It plans how deep to scan within a set cost cap and deadline, and a pre-scan estimate shows the cost before anything runs. You pay per scan, not per developer seat.",
+      "The scanner builds on the open-source nano-analyzer and runs from the command line today. The site lists case studies on open-source projects such as tmux, KDE Connect and Himalaya.",
+      "The comment-triggered service is in early access and not yet purchasable."
+    ],
+    "stack": [
+      "Python"
+    ],
+    "year": "2026",
+    "links": [
+      {
+        "label": "Visit BudgetScan",
+        "url": "https://ggsa.tech"
+      },
+      {
+        "label": "Read the case studies",
+        "url": "https://ggsa.tech/stories/"
+      }
+    ],
+    "image": "/assets/projects/budgetscan.png"
+  },
+  {
     "slug": "frontiermath",
     "title": "AI Math Benchmark & Agentic Tool",
     "category": "software",
@@ -200,25 +235,6 @@
       }
     ],
     "image": "/assets/projects/happy-buddha.png"
-  },
-  {
-    "slug": "budgetscan",
-    "title": "BudgetScan Security Scanner",
-    "category": "software",
-    "featured": false,
-    "description": "AI-based security scanner for pull and merge requests that sets scan depth within a cost cap and deadline. Comment-triggered service is in early access.",
-    "details": [
-      "An AI-based security scanner for pull and merge requests.",
-      "It plans how deep to scan within a set cost cap and deadline. The comment-triggered service is in early access and not yet purchasable."
-    ],
-    "stack": [],
-    "links": [
-      {
-        "label": "Visit BudgetScan",
-        "url": "https://ggsa.tech"
-      }
-    ],
-    "image": "/assets/projects/budgetscan.png"
   },
   {
     "slug": "effective-altruism-slovakia",

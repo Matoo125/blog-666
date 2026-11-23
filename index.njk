@@ -69,11 +69,37 @@ description: "Thank you for visiting my corner of the web. I'm a software develo
   <p>Thank you for visiting my corner of the web. My interests are rooted in modern sciences, and effective altruism. I believe in animal sentience, as well as human flourishing. <a href="mailto:matej@hireme.sk" class='highlighted'>Get in touch!</a> :)</p>
 </section>
 
+{% for project in projects %}
+  {% if project.spotlight %}
+    <section class="spotlight" aria-labelledby="spotlight-{{ project.slug }}">
+      <a href="{{ project.links[0].url }}" target="_blank" rel="noopener" class="spotlight-media">
+        <img src="{{ project.image }}" alt="Screenshot of {{ project.title }}" width="1200" height="750">
+      </a>
+      <div class="spotlight-body">
+        <span class="spotlight-label">Currently building</span>
+        <h2 id="spotlight-{{ project.slug }}">{{ project.title }}</h2>
+        {% if project.tagline %}<p class="spotlight-tagline">{{ project.tagline }}</p>{% endif %}
+        <ul class="spotlight-points">
+          {% for point in project.highlights %}
+            <li>{{ point }}</li>
+          {% endfor %}
+        </ul>
+        <div class="spotlight-actions">
+          {% for link in project.links %}
+            <a href="{{ link.url }}" class="{% if loop.first %}spotlight-button{% else %}read-more{% endif %}" target="_blank" rel="noopener">{{ link.label }}{% if loop.first %} &rarr;{% endif %}</a>
+          {% endfor %}
+          <a href="/projects/{{ project.slug }}/" class="read-more">About the project</a>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endfor %}
+
 <h2 id="projects" style="font-family: var(--font-title); font-size: 1.6rem; font-weight: 700; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 3rem; margin-bottom: 1.5rem;">Featured Projects</h2>
 
 <div class="posts-grid">
   {% for project in projects %}
-    {% if project.featured %}
+    {% if project.featured and not project.spotlight %}
       {% include "partials/project-card.njk" %}
     {% endif %}
   {% endfor %}
