@@ -102,6 +102,67 @@
     "image": "/assets/projects/frontiermath.png"
   },
   {
+    "slug": "hireme",
+    "title": "Hireme.sk Job Board",
+    "category": "software",
+    "featured": true,
+    "description": "Job board that collects high-impact job listings from partner boards such as 80,000 Hours, Probably Good, CEA, and Effective Animal Advocacy, filtered for Slovakia and worldwide roles.",
+    "details": [
+      "Hireme.sk collects high-impact job listings from partner job boards and highlights roles relevant to job seekers in Slovakia or elsewhere in the world."
+    ],
+    "stack": [
+      "Python"
+    ],
+    "links": [
+      {
+        "label": "Browse jobs",
+        "url": "https://hireme.sk/"
+      }
+    ],
+    "image": "/assets/projects/hireme.png"
+  },
+  {
+    "slug": "altfresh",
+    "title": "Altfresh Bookmarking App",
+    "category": "software",
+    "featured": true,
+    "description": "Reading app that saves web links, uploaded files, and pasted text, with customizable display, text-to-speech, highlights, and notes.",
+    "details": [
+      "Altfresh saves web links, uploaded files, and pasted text so you can read them with customizable display settings.",
+      "You can listen to content aloud and add highlights and notes."
+    ],
+    "stack": [
+      "TypeScript"
+    ],
+    "links": [
+      {
+        "label": "Open Altfresh",
+        "url": "https://altfresh.sk/"
+      }
+    ],
+    "image": "/assets/projects/altfresh.png"
+  },
+  {
+    "slug": "happy-buddha",
+    "title": "Happy Buddha Meditation App",
+    "category": "software",
+    "featured": true,
+    "description": "Meditation app with a session timer and a wellness tracking tool.",
+    "details": [
+      "A meditation app with a timer for sessions and a tool for tracking wellness."
+    ],
+    "stack": [
+      "TypeScript"
+    ],
+    "links": [
+      {
+        "label": "Open the app",
+        "url": "https://sit.altfresh.sk/"
+      }
+    ],
+    "image": "/assets/projects/happy-buddha.png"
+  },
+  {
     "slug": "spec-driven-development",
     "title": "Spec-Driven Development Prototype",
     "category": "software",
@@ -125,6 +186,29 @@
       }
     ],
     "image": "/assets/projects/spec-driven-development.png"
+  },
+  {
+    "slug": "lang-app",
+    "title": "Language Learning App",
+    "category": "software",
+    "featured": false,
+    "description": "Web app for learning languages, starting with German.",
+    "details": [
+      "German vocabulary flashcards with spaced-repetition scoring, plus chat, writing feedback, and a reader that uses the bookmarks API.",
+      "Built with Preact and Vite. Pronunciation audio is generated and stored by the backend API."
+    ],
+    "stack": [
+      "Preact",
+      "Vite",
+      "JavaScript"
+    ],
+    "links": [
+      {
+        "label": "Open the app",
+        "url": "https://lang.altfresh.sk/"
+      }
+    ],
+    "image": "/assets/projects/lang-app.png"
   },
   {
     "slug": "gate",
@@ -160,90 +244,6 @@
       "Web Components"
     ],
     "year": "2025"
-  },
-  {
-    "slug": "lang-app",
-    "title": "Language Learning App",
-    "category": "software",
-    "featured": false,
-    "description": "Web app for learning languages, starting with German.",
-    "details": [
-      "German vocabulary flashcards with spaced-repetition scoring, plus chat, writing feedback, and a reader that uses the bookmarks API.",
-      "Built with Preact and Vite. Pronunciation audio is generated and stored by the backend API."
-    ],
-    "stack": [
-      "Preact",
-      "Vite",
-      "JavaScript"
-    ],
-    "links": [
-      {
-        "label": "Open the app",
-        "url": "https://lang.altfresh.sk/"
-      }
-    ],
-    "image": "/assets/projects/lang-app.png"
-  },
-  {
-    "slug": "hireme",
-    "title": "Hireme.sk Job Board",
-    "category": "software",
-    "featured": false,
-    "description": "Job board that collects high-impact job listings from partner boards such as 80,000 Hours, Probably Good, CEA, and Effective Animal Advocacy, filtered for Slovakia and worldwide roles.",
-    "details": [
-      "Hireme.sk collects high-impact job listings from partner job boards and highlights roles relevant to job seekers in Slovakia or elsewhere in the world."
-    ],
-    "stack": [
-      "Python"
-    ],
-    "links": [
-      {
-        "label": "Browse jobs",
-        "url": "https://hireme.sk/"
-      }
-    ],
-    "image": "/assets/projects/hireme.png"
-  },
-  {
-    "slug": "altfresh",
-    "title": "Altfresh Bookmarking App",
-    "category": "software",
-    "featured": false,
-    "description": "Reading app that saves web links, uploaded files, and pasted text, with customizable display, text-to-speech, highlights, and notes.",
-    "details": [
-      "Altfresh saves web links, uploaded files, and pasted text so you can read them with customizable display settings.",
-      "You can listen to content aloud and add highlights and notes."
-    ],
-    "stack": [
-      "TypeScript"
-    ],
-    "links": [
-      {
-        "label": "Open Altfresh",
-        "url": "https://altfresh.sk/"
-      }
-    ],
-    "image": "/assets/projects/altfresh.png"
-  },
-  {
-    "slug": "happy-buddha",
-    "title": "Happy Buddha Meditation App",
-    "category": "software",
-    "featured": false,
-    "description": "Meditation app with a session timer and a wellness tracking tool.",
-    "details": [
-      "A meditation app with a timer for sessions and a tool for tracking wellness."
-    ],
-    "stack": [
-      "TypeScript"
-    ],
-    "links": [
-      {
-        "label": "Open the app",
-        "url": "https://sit.altfresh.sk/"
-      }
-    ],
-    "image": "/assets/projects/happy-buddha.png"
   },
   {
     "slug": "effective-altruism-slovakia",
