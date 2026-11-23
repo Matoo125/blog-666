@@ -105,7 +105,7 @@
     "slug": "hireme",
     "title": "Hireme.sk Job Board",
     "category": "software",
-    "featured": true,
+    "featured": false,
     "description": "Job board that collects high-impact job listings from partner boards such as 80,000 Hours, Probably Good, CEA, and Effective Animal Advocacy, filtered for Slovakia and worldwide roles.",
     "details": [
       "Hireme.sk collects high-impact job listings from partner job boards and highlights roles relevant to job seekers in Slovakia or elsewhere in the world."
@@ -125,7 +125,7 @@
     "slug": "altfresh",
     "title": "Altfresh Bookmarking App",
     "category": "software",
-    "featured": true,
+    "featured": false,
     "description": "Reading app that saves web links, uploaded files, and pasted text, with customizable display, text-to-speech, highlights, and notes.",
     "details": [
       "Altfresh saves web links, uploaded files, and pasted text so you can read them with customizable display settings.",
@@ -146,7 +146,7 @@
     "slug": "happy-buddha",
     "title": "Happy Buddha Meditation App",
     "category": "software",
-    "featured": true,
+    "featured": false,
     "description": "Meditation app with a session timer and a wellness tracking tool.",
     "details": [
       "A meditation app with a timer for sessions and a tool for tracking wellness."
