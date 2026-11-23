@@ -11,7 +11,7 @@ permalink: /projects/
 </section>
 
 <h2 class="projects-heading">Community</h2>
-<div class="posts-grid">
+<div class="card-grid community-grid">
   {% for project in projects %}
     {% if project.category == "community" %}
       {% include "partials/project-card.njk" %}
@@ -20,7 +20,7 @@ permalink: /projects/
 </div>
 
 <h2 class="projects-heading">Software</h2>
-<div class="posts-grid">
+<div class="card-grid">
   {% for project in projects %}
     {% if project.category == "software" %}
       {% include "partials/project-card.njk" %}
