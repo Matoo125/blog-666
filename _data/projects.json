@@ -35,6 +35,48 @@
     "image": "/assets/projects/budgetscan.png"
   },
   {
+    "slug": "educore",
+    "title": "Educore Stories (Educational Game)",
+    "category": "software",
+    "featured": true,
+    "description": "Make story games for your class: 3D places to explore, people to talk to and things to find. Plays in the browser.",
+    "details": [
+      "Educore Stories lets teachers make story games for their class: 3D places to explore, people to talk to and things to find. It runs in the browser, with a sample story to play or edit.",
+      "It grew out of Educore, a high-level editor for developing educational 3D games, built in C++ on top of sokol."
+    ],
+    "stack": [
+      "Godot",
+      "C++",
+      "sokol"
+    ],
+    "links": [
+      {
+        "label": "Play Educore Stories",
+        "url": "https://matoo125.github.io/education-tool/stories/"
+      }
+    ],
+    "image": "/assets/projects/educore.png"
+  },
+  {
+    "slug": "redactor",
+    "title": "Redactor (Lightweight IDE)",
+    "category": "software",
+    "featured": true,
+    "description": "Lightweight, extensible C++ text editor with language server support, a built-in terminal, and Git and pull request tools.",
+    "details": [
+      "Redactor is a lightweight, extensible text editor written in C++20 with SDL3. It has a custom immediate-mode UI, embedded Umka and Lua scripting, and a built-in terminal.",
+      "Features include multiple cursors, split panes, Vim mode, tree-sitter highlighting, language server support, a Git sidebar, and an agent panel for coding agents."
+    ],
+    "stack": [
+      "C++20",
+      "SDL3",
+      "Lua",
+      "Umka"
+    ],
+    "image": "/assets/projects/redactor.png",
+    "links": []
+  },
+  {
     "slug": "frontiermath",
     "title": "AI Math Benchmark & Agentic Tool",
     "category": "software",
@@ -58,39 +100,6 @@
       }
     ],
     "image": "/assets/projects/frontiermath.png"
-  },
-  {
-    "slug": "educore",
-    "title": "Educore (3D Game Engine)",
-    "category": "software",
-    "featured": true,
-    "description": "High-level editor for developing educational 3D games.",
-    "details": [
-      "Educore is a high-level editor for developing educational 3D games. It is built in C++ on top of sokol."
-    ],
-    "stack": [
-      "C++",
-      "sokol"
-    ]
-  },
-  {
-    "slug": "redactor",
-    "title": "Redactor (Lightweight IDE)",
-    "category": "software",
-    "featured": true,
-    "description": "Lightweight, extensible C++ text editor with language server support, a built-in terminal, and Git and pull request tools.",
-    "details": [
-      "Redactor is a lightweight, extensible text editor written in C++20 with SDL3. It has a custom immediate-mode UI, embedded Umka and Lua scripting, and a built-in terminal.",
-      "Features include multiple cursors, split panes, Vim mode, tree-sitter highlighting, language server support, a Git sidebar, and an agent panel for coding agents."
-    ],
-    "stack": [
-      "C++20",
-      "SDL3",
-      "Lua",
-      "Umka"
-    ],
-    "image": "/assets/projects/redactor.png",
-    "links": []
   },
   {
     "slug": "spec-driven-development",
@@ -251,7 +260,8 @@
         "label": "Visit the community",
         "url": "https://www.efektivnyaltruizmus.sk/"
       }
-    ]
+    ],
+    "image": "/assets/projects/effective-altruism-slovakia.png"
   },
   {
     "slug": "pauseai-slovensko",
@@ -269,7 +279,8 @@
         "label": "Visit PauseAI Slovensko",
         "url": "https://pauseai.sk"
       }
-    ]
+    ],
+    "image": "/assets/projects/pauseai-slovensko.png"
   },
   {
     "slug": "projekt-empatia",
@@ -287,6 +298,7 @@
         "label": "Visit Projekt Empatia",
         "url": "https://www.projektempatia.sk"
       }
-    ]
+    ],
+    "image": "/assets/projects/projekt-empatia.png"
   }
 ]
