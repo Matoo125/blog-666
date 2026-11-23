@@ -97,7 +97,7 @@ description: "Thank you for visiting my corner of the web. I'm a software develo
 
 <h2 id="projects" style="font-family: var(--font-title); font-size: 1.6rem; font-weight: 700; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 3rem; margin-bottom: 1.5rem;">Featured Projects</h2>
 
-<div class="posts-grid">
+<div class="card-grid">
   {% for project in projects %}
     {% if project.featured and not project.spotlight %}
       {% include "partials/project-card.njk" %}
@@ -109,7 +109,7 @@ description: "Thank you for visiting my corner of the web. I'm a software develo
 
 <h2 id="community" class="projects-heading">Community</h2>
 
-<div class="community-grid">
+<div class="card-grid community-grid">
   {% for project in projects %}
     {% if project.category == "community" %}
       {% include "partials/project-card.njk" %}
