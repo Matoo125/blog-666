@@ -1751,7 +1751,7 @@ function initLab() {
         <button type="button" class="tl-btn" data-key="Enter">Enter</button>
       </div>
     </div>
-    <p class="tl-docked-note" hidden>The terminal is docked to the bottom of the window. <button type="button" class="tl-link" data-act="undock">Bring it back here</button></p>`;
+    <p class="tl-docked-note" hidden>The terminal is docked so it stays in view while you read. <button type="button" class="tl-link" data-act="undock">Bring it back here</button></p>`;
 
   const frame = slot.querySelector('.tl-frame');
   const screen = slot.querySelector('.tl-screen');
@@ -1765,6 +1765,7 @@ function initLab() {
   const progress = loadProgress();
   let active = null; /* { id, step } */
   let docked = false;
+  const sideQuery = window.matchMedia('(min-width: 1200px)');
   let cw = 8;
   let lh = 18;
 
@@ -1788,14 +1789,23 @@ function initLab() {
 
   function fit() {
     measure();
+    /* Docked, the terminal is a column on the right of a wide window and a
+       strip along the bottom of a narrow one. The page makes room either way. */
+    const side = docked && sideQuery.matches;
+    document.body.style.paddingRight = side ? `${frame.offsetWidth}px` : '';
     const cols = clamp(Math.floor(screen.clientWidth / cw), 20, 140);
-    const rows = docked ? clamp(Math.floor((window.innerHeight * 0.38) / lh), 8, 18) : 20;
+    let rows = 20;
+    if (side) {
+      let chrome = 12;
+      for (const el of frame.children) if (el !== screen) chrome += el.offsetHeight;
+      rows = clamp(Math.floor((frame.clientHeight - chrome) / lh), 8, 60);
+    } else if (docked) rows = clamp(Math.floor((window.innerHeight * 0.38) / lh), 8, 18);
     sim.resize(cols, rows);
     canvas.style.setProperty('--tl-lh', `${lh}px`);
     canvas.style.setProperty('--tl-cw', `${cw}px`);
     canvas.style.width = `${cols * cw}px`;
     canvas.style.height = `${rows * lh}px`;
-    document.body.style.paddingBottom = docked ? `${frame.offsetHeight}px` : '';
+    document.body.style.paddingBottom = docked && !side ? `${frame.offsetHeight}px` : '';
     render();
   }
 
@@ -1924,7 +1934,7 @@ function initLab() {
   function startLab(id) {
     active = { id, step: 0 };
     sim.reset(LABS[id].setup);
-    if (!docked) setDocked(true);
+    if (!docked) setDocked(true, cards.find((el) => el.dataset.lab === id));
     renderTask();
     renderCards();
     render();
@@ -1933,13 +1943,16 @@ function initLab() {
 
   /* ----- dock ----- */
 
-  function setDocked(on) {
+  /* Docking reflows the article, so keep `anchor` where the reader left it. */
+  function setDocked(on, anchor = slot) {
+    const before = anchor.getBoundingClientRect().top;
     docked = on;
     frame.classList.toggle('tl-docked', on);
     dockBtn.textContent = on ? 'Undock' : 'Dock';
     dockBtn.setAttribute('aria-pressed', String(on));
     dockedNote.hidden = !on;
     fit();
+    window.scrollBy({ top: anchor.getBoundingClientRect().top - before, behavior: 'instant' });
   }
 
   /* ----- input ----- */
@@ -2008,7 +2021,7 @@ function initLab() {
       if (task) {
         hintEl.innerHTML = task.hint;
         hintEl.hidden = !hintEl.hidden;
-        if (docked) document.body.style.paddingBottom = `${frame.offsetHeight}px`;
+        if (docked) fit();
       }
       focus();
     } else if (btn.dataset.key) {
@@ -2030,6 +2043,7 @@ function initLab() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(fit, 100);
   });
+  sideQuery.addEventListener('change', fit);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
 
   renderTask();

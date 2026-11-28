@@ -34,6 +34,38 @@
   box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.25);
 }
 
+/* On a wide window the docked terminal becomes a column beside the article. */
+@media (min-width: 1200px) {
+  .tl-frame.tl-docked {
+    display: flex;
+    flex-direction: column;
+    top: var(--header-height);
+    right: 0;
+    bottom: 0;
+    left: auto;
+    transform: none;
+    width: clamp(420px, calc(100vw - 800px), 760px);
+    border: 0;
+    border-left: 1px solid var(--border-color);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .tl-frame.tl-docked.tl-focused {
+    border-left-color: var(--accent-primary);
+  }
+
+  .tl-docked .tl-screen {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .tl-docked .tl-bar {
+    flex-wrap: wrap;
+  }
+}
+
 .tl-bar {
   display: flex;
   align-items: center;
