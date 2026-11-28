@@ -85,7 +85,7 @@ The terminal below is a small tmux simulator that runs in your browser. Click it
 
 A few things to know before you start:
 
-* **Exercises:** Each section below ends with a practice box. Press its start button and the terminal docks to the bottom of the window, so you can read and type at the same time. Tasks tick themselves off as you complete them, and **Hint** shows the keys if you get stuck.
+* **Exercises:** Each section below ends with a practice box. Press its start button and the terminal docks beside the text (or along the bottom of a narrow window), so you can read and type at the same time. Tasks tick themselves off as you complete them, and **Hint** shows the keys if you get stuck.
 * **It is a simulation:** It knows the default tmux keys and the common `tmux` commands, but it is not a real shell and it does not read a `.tmux.conf`. Type `help` to see what it understands.
 * **Keyboard:** You need a physical keyboard for most of it. On a touch screen, a row of buttons below the terminal stands in for `Ctrl + b`, `Esc`, and the arrow keys. Press `Tab` to move focus out of the terminal.
 
