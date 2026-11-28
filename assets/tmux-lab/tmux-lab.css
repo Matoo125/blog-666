@@ -1,0 +1,476 @@
+/* tmux lab: the simulated terminal and the exercise cards in the tmux post. */
+
+.tl-frame {
+  /* The terminal keeps its own dark palette in both site themes. */
+  --tl-bg: #11131a;
+  --tl-fg: #d7dae0;
+  --tl-dim: #4b5263;
+  --tl-green: #4eb85a;
+  --tl-yellow: #e3c14a;
+  --tl-ink: #0b0f19;
+
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--tl-bg);
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.tl-frame.tl-focused {
+  border-color: var(--accent-primary);
+}
+
+.tl-frame.tl-docked {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(100%, 860px);
+  margin: 0;
+  z-index: 90;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 0;
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.tl-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+.tl-task {
+  min-width: 0;
+}
+
+.tl-task-label {
+  font-family: var(--font-title);
+  font-weight: 600;
+  color: var(--accent-primary);
+  margin-right: 0.35rem;
+  white-space: nowrap;
+}
+
+.tl-task-done {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+html[data-theme="dark"] .tl-task-done {
+  color: #4ade80;
+}
+
+.tl-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.tl-btn {
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.tl-btn:hover {
+  color: var(--accent-primary);
+  border-color: var(--border-focus);
+}
+
+.tl-btn:focus-visible,
+.tl-link:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.tl-hint {
+  padding: 0.45rem 0.75rem;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.tl-screen {
+  position: relative;
+  padding: 6px 0;
+  cursor: text;
+  outline: none;
+}
+
+.tl-canvas {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  color: var(--tl-fg);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+  line-height: var(--tl-lh, 18px);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.tl-probe {
+  position: absolute;
+  visibility: hidden;
+  white-space: pre;
+}
+
+/* Receives the keystrokes. Kept in the layout so focusing it never scrolls. */
+.tl-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  resize: none;
+  font-size: 16px;
+}
+
+.tl-veil {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(215, 218, 224, 0.14);
+  color: var(--tl-fg);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  pointer-events: none;
+}
+
+.tl-focused .tl-veil {
+  display: none;
+}
+
+.tl-pane,
+.tl-overlay,
+.tl-sep,
+.tl-status,
+.tl-cursor {
+  position: absolute;
+}
+
+.tl-pane,
+.tl-overlay {
+  overflow: hidden;
+}
+
+.tl-row {
+  height: var(--tl-lh, 18px);
+  white-space: pre;
+  overflow: hidden;
+}
+
+.tl-prompt {
+  color: #7ee787;
+}
+
+.tl-sel {
+  background: var(--tl-yellow);
+  color: var(--tl-ink);
+}
+
+.tl-cursor {
+  box-shadow: inset 0 0 0 1px var(--tl-fg);
+}
+
+.tl-focused .tl-cursor {
+  background: rgba(215, 218, 224, 0.75);
+  box-shadow: none;
+}
+
+.tl-focused .tl-cursor-copy,
+.tl-cursor-copy {
+  background: rgba(227, 193, 74, 0.8);
+  box-shadow: none;
+}
+
+.tl-indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--tl-yellow);
+  color: var(--tl-ink);
+}
+
+.tl-number {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #58a6ff;
+}
+
+.tl-number-active {
+  color: #ff7b72;
+}
+
+/* Borders are drawn through the middle of their cell, and run half a cell
+   past each end so they meet the border they butt up against. */
+.tl-sep::before {
+  content: "";
+  position: absolute;
+}
+
+.tl-sep-v::before {
+  left: 50%;
+  top: calc(var(--tl-lh, 18px) / -2);
+  bottom: calc(var(--tl-lh, 18px) / -2);
+  border-left: 1px solid var(--tl-dim);
+}
+
+.tl-sep-h::before {
+  top: 50%;
+  left: calc(var(--tl-cw, 8px) / -2);
+  right: calc(var(--tl-cw, 8px) / -2);
+  border-top: 1px solid var(--tl-dim);
+}
+
+.tl-sep-active.tl-sep-v::before {
+  top: 0;
+  bottom: 0;
+  border-color: var(--tl-green);
+}
+
+.tl-sep-active.tl-sep-h::before {
+  left: 0;
+  right: 0;
+  border-color: var(--tl-green);
+}
+
+.tl-overlay {
+  background: var(--tl-bg);
+}
+
+.tl-row-cur {
+  background: var(--tl-yellow);
+  color: var(--tl-ink);
+}
+
+.tl-status {
+  display: flex;
+  justify-content: space-between;
+  gap: 1ch;
+  overflow: hidden;
+  white-space: pre;
+  background: var(--tl-green);
+  color: var(--tl-ink);
+}
+
+.tl-status-left {
+  overflow: hidden;
+  min-width: 0;
+}
+
+.tl-status-right {
+  flex-shrink: 0;
+}
+
+.tl-win-cur {
+  font-weight: 500;
+}
+
+.tl-prefix {
+  background: var(--tl-ink);
+  color: var(--tl-green);
+  padding: 0 0.5ch;
+}
+
+.tl-status-line {
+  display: block;
+  background: var(--tl-yellow);
+}
+
+.tl-status-cursor {
+  background: var(--tl-ink);
+}
+
+.tl-status-byobu {
+  background: #2a2e3b;
+  color: var(--tl-fg);
+}
+
+.tl-status-byobu .tl-win-cur {
+  background: var(--tl-fg);
+  color: var(--tl-ink);
+}
+
+.tl-status-byobu .tl-prefix {
+  background: var(--tl-yellow);
+  color: var(--tl-ink);
+}
+
+.tl-touch {
+  display: none;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+@media (pointer: coarse) {
+  .tl-touch {
+    display: flex;
+  }
+
+  .tl-touch .tl-btn {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+.tl-docked-note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.tl-link {
+  font: inherit;
+  color: var(--accent-primary);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Exercise cards */
+.tmux-exercise {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.tmux-exercise.tx-active {
+  border-color: var(--accent-primary);
+}
+
+.tx-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.tx-title {
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+}
+
+.tx-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.post-body ol.tx-tasks {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.tx-tasks li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+
+.tx-mark {
+  flex-shrink: 0;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.tx-done {
+  color: var(--text-muted);
+}
+
+.tx-done .tx-mark {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: var(--bg-card);
+}
+
+.tx-current {
+  color: var(--text-primary);
+}
+
+.tx-current .tx-mark {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+kbd {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  padding: 0.1rem 0.35rem;
+  border: 1px solid var(--border-color);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  /* The comparison tables are wider than a phone; let them scroll sideways. */
+  .post-body table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .tl-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tl-actions {
+    justify-content: flex-end;
+  }
+}
