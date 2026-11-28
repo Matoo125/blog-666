@@ -601,79 +601,281 @@ pre[class*="language-"] {
 }
 
 /* CV Page Styling */
-.cv-container {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 3.5rem 4.5rem;
-  max-width: 900px;
-  margin: 2rem auto;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+.cv {
+  --cv-rail: 8.5rem;
+  margin: 2.5rem 0 1rem;
+  color: var(--text-secondary);
 }
 
-.cv-container h1 {
-  font-family: var(--font-title);
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-  border-bottom: 3px solid var(--accent-primary);
-  display: inline-block;
-  padding-bottom: 0.5rem;
+.cv a:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
-.cv-container h2 {
-  font-family: var(--font-title);
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-top: 2.5rem;
-  margin-bottom: 1.2rem;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 0.5rem;
-}
-
-.cv-container h3 {
-  font-family: var(--font-title);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+.cv-head-top {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+  gap: 1rem 2rem;
   flex-wrap: wrap;
 }
 
-.cv-container h3 em {
-  font-weight: 400;
-  color: var(--text-muted);
-  font-size: 1rem;
-}
-
-.cv-container p {
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.cv-container ul {
-  padding-left: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--text-secondary);
-}
-
-.cv-container li {
-  margin-bottom: 0.4rem;
-}
-
-.cv-container hr {
-  display: none; /* Hide markdown HRs in favor of H2 borders */
-}
-
-.cv-container strong {
+.cv h1 {
+  font-family: var(--font-title);
+  font-size: 3.25rem;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   color: var(--text-primary);
+}
+
+.cv-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--border-focus);
+  border-radius: 6px;
+}
+
+.cv-download:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.cv-summary {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  max-width: 62ch;
+  margin-top: 1.5rem;
+}
+
+.cv strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.cv-contact {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  margin-top: 1.25rem;
+}
+
+.cv-contact a {
+  font-weight: 500;
+  color: var(--accent-primary);
+  border-bottom: 1px solid transparent;
+}
+
+.cv-contact a:hover {
+  color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.cv-section {
+  margin-top: 3.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.cv-section h2 {
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  margin-left: var(--cv-rail);
+  margin-bottom: 1.5rem;
+}
+
+/* Every row is a key in the left rail (a year, a label) and its value. */
+.cv-row {
+  display: grid;
+  grid-template-columns: var(--cv-rail) minmax(0, 1fr);
+  margin-bottom: 0.9rem;
+}
+
+.cv-row-tight {
+  margin-bottom: 0.35rem;
+}
+
+.cv-job {
+  margin-bottom: 2.25rem;
+}
+
+.cv-section > .cv-row:last-child {
+  margin-bottom: 0;
+}
+
+.cv-key {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  padding-right: 1rem;
+  /* sits on the baseline of the 1rem body text beside it */
+  line-height: 1.6rem;
+}
+
+.cv-job .cv-key {
+  /* sits on the baseline of the company name */
+  line-height: 1.75rem;
+}
+
+.cv-value {
+  grid-column: 2;
+}
+
+.cv h3 {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.cv-job-meta {
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-top: 0.15rem;
+}
+
+.cv ul.cv-value,
+.cv-value ul {
+  list-style: none;
+}
+
+.cv-job ul {
+  margin-top: 0.65rem;
+}
+
+.cv-value li,
+li.cv-value {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.4rem;
+  max-width: 68ch;
+}
+
+.cv-value li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--border-focus);
+}
+
+.cv-value li:last-child {
+  margin-bottom: 0;
+}
+
+.cv-stack li {
+  padding-left: 0;
+}
+
+.cv-stack li::before {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .cv {
+    margin-top: 1.5rem;
+  }
+
+  .cv h1 {
+    font-size: 2.4rem;
+  }
+
+  .cv-summary {
+    font-size: 1.05rem;
+  }
+
+  .cv-section {
+    margin-top: 2.5rem;
+  }
+
+  .cv-section h2 {
+    margin-left: 0;
+  }
+
+  .cv-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cv-value {
+    grid-column: 1;
+  }
+
+  .cv-row-tight {
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+  }
+
+  .cv-row-tight .cv-value {
+    grid-column: 2;
+  }
+}
+
+@media print {
+  header.site-header,
+  footer.site-footer,
+  .cv-download {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  main.main-content {
+    max-width: none;
+    padding: 0;
+  }
+
+  /* rem-based sizes all scale down together for paper */
+  html {
+    font-size: 11.5px;
+  }
+
+  .cv {
+    margin: 0;
+  }
+
+  .cv-section {
+    margin-top: 1.75rem;
+  }
+
+  .cv-job {
+    margin-bottom: 1.25rem;
+  }
+
+  .cv h3,
+  .cv-job-meta {
+    break-after: avoid;
+  }
+
+  .cv-value li {
+    break-inside: avoid;
+    max-width: none;
+  }
+
+  .cv-summary {
+    max-width: none;
+  }
+
+  .cv-section h2 {
+    break-after: avoid;
+  }
 }
 
 /* Responsive adjustments */
@@ -729,16 +931,6 @@ pre[class*="language-"] {
     align-items: center;
   }
 
-  .cv-container {
-    padding: 1.5rem;
-    margin: 1rem auto;
-    border-radius: 8px;
-  }
-  
-  .cv-container h1 {
-    font-size: 2.2rem;
-  }
-  
   .links-container {
     padding: 1.5rem;
     margin: 1rem auto;
