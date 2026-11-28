@@ -1,0 +1,192 @@
+---
+layout: layouts/base.njk
+permalink: /cv/
+title: "Matej Vrzala - Curriculum Vitae"
+description: "Curriculum Vitae for Matej Vrzala, Product-focused software engineer."
+
+summary:
+  lead: "Product-focused software engineer"
+  rest: "with 9+ years of experience building data-intensive applications, developer tools, and user-facing products. Strong background in data visualization, full-stack development, and research-driven environments. Proven ability to improve performance, design systems, and support complex analytical workflows."
+
+contact:
+  - label: "matej@hireme.sk"
+    url: "mailto:matej@hireme.sk"
+  - label: "LinkedIn"
+    url: "https://www.linkedin.com/in/matej-vrzala/"
+  - label: "GitHub"
+    url: "https://github.com/Matoo125"
+
+jobs:
+  - company: "Hash AI"
+    role: "Short-Term Contract"
+    place: "Remote"
+    years: "2026"
+    points:
+      - "Developed a prototype for spec-driven development as part of the ARIA Safeguarded AI program."
+      - "Stack: React, Express, DoltDB, Claude Agentic SDK, OpenCode SDK."
+  - company: "Epoch AI"
+    role: "Staff Developer & Contract"
+    place: "Remote"
+    years: "2025"
+    points:
+      - "Built a reusable data visualization framework on top of D3."
+      - "Developed a UI component system using Web Components to standardize website design."
+      - "Conducted technical analysis of projects proposed to leading AI labs."
+      - "Collaborated closely with researchers to translate complex data into usable interfaces."
+      - "Developed a leading AI math benchmark and agentic tool."
+  - company: "Metaculus"
+    role: "Platform Developer"
+    place: "Remote"
+    years: "2019 – 2024"
+    points:
+      - "Developed a leading community-driven, reputation-based forecasting platform."
+      - "Helped scale the company from a 2-person team to a 20+ FTE organization."
+      - "Built and maintained full-stack features using Django, React, Angular, D3, and PostgreSQL."
+      - "Guided architectural decisions influencing the platform's scalability and long-term maintainability."
+      - "Developed interactive data visualizations to support probabilistic forecasting and user insights."
+  - company: "Nano Energies"
+    role: "Internal Product Developer"
+    place: "Prague"
+    years: "2019"
+    points:
+      - "Developed internal management systems for an energy company as part of a core backend team."
+      - "Transitioned into leading frontend development, significantly improving usability and system accessibility."
+      - "Delivered end-to-end features bridging backend logic with user-facing interfaces."
+  - company: "CyberFox"
+    role: "Software Developer"
+    place: "Prague"
+    years: "2018"
+    points:
+      - "Optimized large-scale database queries, improving search performance by 3–5x (up to 10x in edge cases)."
+      - "Designed and implemented integration between WooCommerce and warehouse systems."
+      - "Maintained and optimized data-heavy systems requiring high performance and reliability."
+  - company: "Grün"
+    role: "Software Developer"
+    place: "Bratislava"
+    years: "2017"
+    points:
+      - "Refactored a legacy codebase and modernized the architecture of NGO management software."
+      - "Built a full donation payment system, enabling online fundraising for multiple organizations."
+      - "Delivered end-to-end product features with direct real-world impact."
+
+mainStack:
+  - name: "Python"
+    with: "Django, FastAPI"
+  - name: "TypeScript"
+    with: "React, Next.js, Vue, Angular, D3, Bun, NodeJS"
+  - name: "PHP"
+    with: "Symfony, Yii2, Zend"
+  - name: "SQL"
+otherTools: "C++, Rust, Go, Zig, Lua"
+
+sideProjects:
+  - "Led the development of a custom 3D game engine and lightweight IDE in C++ and OpenGL."
+  - "Built experimental products and full-stack applications, including one reaching thousands of users across multiple countries."
+  - "Passionate about developer tools, data systems, and interactive visualization."
+
+additional:
+  - "Active member of the Effective Altruism community (organized events, discussions, and retreats)."
+  - "Recommended and mentored 10+ individuals who successfully transitioned into new tech roles."
+  - "<strong>Winner</strong> — Škoda Warehouse Hackathon."
+  - "Completed courses from institutions including Oxford and MIT; studied Electrical Engineering."
+  - "Graduated from a Colorado-based relational leadership 2-year program."
+
+languages:
+  - name: "Slovak"
+    level: "Native"
+  - name: "Czech"
+    level: "Fluent"
+  - name: "English"
+    level: "C1"
+  - name: "German"
+    level: "A2"
+  - name: "Spanish"
+    level: "A1"
+---
+<article class="cv">
+  <header class="cv-head">
+    <div class="cv-head-top">
+      <h1>Matej Vrzala</h1>
+      <a href="/cv.pdf" class="cv-download" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download PDF
+      </a>
+    </div>
+    <p class="cv-summary"><strong>{{ summary.lead }}</strong> {{ summary.rest }}</p>
+    <ul class="cv-contact">
+      {%- for item in contact %}
+      <li><a href="{{ item.url }}"{% if 'mailto:' not in item.url %} target="_blank" rel="noopener"{% endif %}>{{ item.label }}</a></li>
+      {%- endfor %}
+    </ul>
+  </header>
+
+  <section class="cv-section">
+    <h2>Professional Experience</h2>
+    {%- for job in jobs %}
+    <div class="cv-row cv-job">
+      <p class="cv-key">{{ job.years }}</p>
+      <div class="cv-value">
+        <h3>{{ job.company }}</h3>
+        <p class="cv-job-meta">{{ job.role }}, {{ job.place }}</p>
+        <ul>
+          {%- for point in job.points %}
+          <li>{{ point }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+    {%- endfor %}
+  </section>
+
+  <section class="cv-section">
+    <h2>Technical Skills</h2>
+    <div class="cv-row">
+      <p class="cv-key">Main stack</p>
+      <ul class="cv-value cv-stack">
+        {%- for item in mainStack %}
+        <li><strong>{{ item.name }}</strong>{% if item.with %} <span>{{ item.with }}</span>{% endif %}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div class="cv-row">
+      <p class="cv-key">Also</p>
+      <p class="cv-value">{{ otherTools }}</p>
+    </div>
+  </section>
+
+  <section class="cv-section">
+    <h2>Additional Projects &amp; Interests</h2>
+    <div class="cv-row">
+      <ul class="cv-value">
+        {%- for item in sideProjects %}
+        <li>{{ item }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section class="cv-section">
+    <h2>Additional Experience &amp; Education</h2>
+    <div class="cv-row">
+      <ul class="cv-value">
+        {%- for item in additional %}
+        <li>{{ item | safe }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section class="cv-section">
+    <h2>Languages</h2>
+    {%- for item in languages %}
+    <div class="cv-row cv-row-tight">
+      <p class="cv-key">{{ item.name }}</p>
+      <p class="cv-value">{{ item.level }}</p>
+    </div>
+    {%- endfor %}
+  </section>
+</article>
